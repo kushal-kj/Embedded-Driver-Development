@@ -1,0 +1,21 @@
+12:17:10 **** Build of configuration Debug for project GPIO_Driver_API ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401retx.d" -MT"Startup/startup_stm32f401retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401retx.o" "../Startup/startup_stm32f401retx.s"
+arm-none-eabi-gcc "../Src/LED_PUSH.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/ravindra/Desktop/GitHub Repo_embedded/Embedded Driver Development/STM32F4xx/GPIO_Driver_API/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/LED_PUSH.d" -MT"Src/LED_PUSH.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/LED_PUSH.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/ravindra/Desktop/GitHub Repo_embedded/Embedded Driver Development/STM32F4xx/GPIO_Driver_API/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/ravindra/Desktop/GitHub Repo_embedded/Embedded Driver Development/STM32F4xx/GPIO_Driver_API/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f401xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/ravindra/Desktop/GitHub Repo_embedded/Embedded Driver Development/STM32F4xx/GPIO_Driver_API/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f401xx_gpio_driver.d" -MT"Driver/Src/stm32f401xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Driver/Src/stm32f401xx_gpio_driver.o"
+arm-none-eabi-gcc -o "GPIO_Driver_API.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ravindra\Desktop\GitHub Repo_embedded\Embedded Driver Development\STM32F4xx\GPIO_Driver_API\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPIO_Driver_API.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GPIO_Driver_API.elf
+ 
+arm-none-eabi-size   GPIO_Driver_API.elf 
+arm-none-eabi-objdump -h -S  GPIO_Driver_API.elf  > "GPIO_Driver_API.list"
+   text	   data	    bss	    dec	    hex	filename
+   2328	      8	   1568	   3904	    f40	GPIO_Driver_API.elf
+Finished building: default.size.stdout
+ 
+Finished building: GPIO_Driver_API.list
+ 
+
+12:17:15 Build Finished. 0 errors, 0 warnings. (took 5s.549ms)
+

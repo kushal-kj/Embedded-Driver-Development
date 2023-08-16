@@ -1,0 +1,49 @@
+
+#include <stdint.h>
+
+uint32_t volatile *pAHB1ENR=(uint32_t*)0x40023830;
+uint32_t volatile *pAPB2ENR=(uint32_t*)0x40023844; //EXT_IT is connected to APB2 bus
+uint32_t volatile *pGPIOC_MODER=(uint32_t*)0x40020800;
+uint32_t volatile *pEXTI_MASKREG=(uint32_t*)0x40013C00;
+uint32_t volatile *pEXTI_PENDINGREG=(uint32_t*)0x40013C14;
+uint32_t volatile *pEXTI_FTSR=(uint32_t*)0x40013C0C;
+uint32_t volatile *pSYSCFG_EXTICR4=(uint32_t*)0x40013814;
+uint32_t volatile *pNVIC_ISER1=(uint32_t*)0xE000E104;
+
+
+void button_init(void);
+void EXTI15_10_IRQHandler(void);
+int main(void)
+{
+	button_init();
+
+while(1){
+
+}
+
+}
+
+void button_init(void){
+	//enable clock for GPIOC
+	*pAHB1ENR |=(1U<<2);
+
+	//enable EXTI (APB2ENR)
+	*pAPB2ENR |=(1U<<14);
+
+	//CONFIGURE SYSCFG
+	*pSYSCFG_EXTICR4 |=(1U<<5);
+
+	//CONFIGURE FALLING OR RISING EDGE
+	*pEXTI_FTSR |=(1U<<13);
+
+	*pEXTI_MASKREG |=(1U<<13);
+	//ENABLE NVIC
+	*pNVIC_ISER1 |=(1U<<8);
+
+
+}
+
+void EXTI15_10_IRQHandler(void){
+	printf("button is pressed\n");
+	*pEXTI_PENDINGREG |=(1U<<13);
+}

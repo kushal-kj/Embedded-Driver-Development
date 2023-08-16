@@ -1,0 +1,21 @@
+11:56:35 **** Incremental Build of configuration Debug for project I2C_Driver_API ****
+make -j8 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f401xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/ravindra/Desktop/KJ/STM32embedded/Embedded_Driver_Development/target/I2C_Driver_API/Inc" -I"C:/Users/ravindra/Desktop/KJ/STM32embedded/Embedded_Driver_Development/target/I2C_Driver_API/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f401xx_spi_driver.d" -MT"Driver/Src/stm32f401xx_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Driver/Src/stm32f401xx_spi_driver.o"
+../Driver/Src/stm32f401xx_spi_driver.c: In function 'SPI_SendData':
+../Driver/Src/stm32f401xx_spi_driver.c:198:17: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  198 |         uint8_t temp=0;
+      |                 ^~~~
+arm-none-eabi-gcc -o "I2C_Driver_API.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ravindra\Desktop\KJ\STM32embedded\Embedded_Driver_Development\target\I2C_Driver_API\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_Driver_API.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_Driver_API.elf
+ 
+arm-none-eabi-size   I2C_Driver_API.elf 
+arm-none-eabi-objdump -h -S  I2C_Driver_API.elf  > "I2C_Driver_API.list"
+   text	   data	    bss	    dec	    hex	filename
+   1876	      8	   1568	   3452	    d7c	I2C_Driver_API.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_Driver_API.list
+ 
+
+11:56:38 Build Finished. 0 errors, 1 warnings. (took 2s.121ms)
+
