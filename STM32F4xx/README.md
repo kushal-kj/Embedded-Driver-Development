@@ -1,10 +1,10 @@
-# DESCRIPTION
+# DESCRIPTION  :
 
 - This folder consist of ***Embedded Device Driver programming***.
 - I have used STM32F401RE Nucleo board (Nucleo-64 series).
 - IDE used : STM32CUBEIDE
 
-# CONTENTS
+# CONTENTS  :
 
 | # |  PROJECT NAME | DESCRIPTION |
 | :--- | :------------: | ----------- |
